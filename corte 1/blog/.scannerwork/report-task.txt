@@ -1,0 +1,6 @@
+projectKey=blogg
+serverUrl=http://localhost:9000
+serverVersion=25.2.0.102705
+dashboardUrl=http://localhost:9000/dashboard?id=blogg
+ceTaskId=17ca4b65-ac0f-4162-bd77-fd5ad5cb11bc
+ceTaskUrl=http://localhost:9000/api/ce/task?id=17ca4b65-ac0f-4162-bd77-fd5ad5cb11bc

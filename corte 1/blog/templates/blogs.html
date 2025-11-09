@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<main class="main">
+    <div class="page-content mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 m-auto">
+                    <div class="single-page pt-50 pr-30">
+                        <div class="single-header style-2">
+                            <div class="row">
+                                <div class="col-xl-10 col-lg-12 m-auto">
+                                    <h6 class="mb-10"><a href="#">Recipes</a></h6>
+                                    <h2 class="mb-10">{{ single_blog.title}}</h2>
+                                    <div class="single-header-meta">
+                                        <div class="entry-meta meta-1 font-xs mt-15 mb-15">
+                                            
+                                            <span class="post-by">Escrito por : {{ single_blog.author }}</span>
+                                            
+                                            <span class="post-on has-dot">{{ single_bog.create_at }}</span>
+                                            
+                                        </div>
+                                        <div class="social-icons single-share">
+                                            <ul class="text-grey-5 d-inline-block">
+                                                <li class="mr-5"><a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-bookmark.svg' %}" alt=""></a></li>
+                                                <li><img src="{% static 'assets/imgs/theme/icons/icon-heart-2.svg' %}" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <figure class="single-thumbnail">
+                            <img src="{{ single_blog.featured_image.url }}"  alt="">
+                        </figure>
+                        <div class="single-content">
+                            <div class="row">
+                                <div class="col-xl-10 col-lg-12 m-auto">
+                                    <p class="single-excerpt">{{ single_bog.short_description }}</p>
+                                    <p>{{ single_blog.blog_body }}</p>
+                                    
+                                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+{% endblock %}
