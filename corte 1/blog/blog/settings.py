@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-=cjd@obq&nqbb@cp5741*^3s)q*yu+rdttw%2g*o+u)t!lt9g(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "rz2abo7hzy.loclx.io",  
+]
+
 
 LOGIN_URL = '/login/'
 
@@ -139,3 +144,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://rz2abo7hzy.loclx.io",
+    "http://rz2abo7hzy.loclx.io",
+]

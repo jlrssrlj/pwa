@@ -1,0 +1,16 @@
+{
+  "name": "Blog de Recetas",
+  "short_name": "Recetas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff5722",
+  "icons": [
+    {
+      "src": "/static/pwa/icons/icono.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
