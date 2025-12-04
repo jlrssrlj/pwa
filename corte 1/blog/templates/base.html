@@ -3,20 +3,17 @@
 <html class="no-js" lang="en">
   <head>
 
-  
-        <!-- PWA -->
-      <link rel="manifest" href="{% static 'pwa/manifest.json' %}">
-      <meta name="theme-color" content="#ff5722">
+    <!-- PWA  -->
+    <link rel="manifest" href="{% static 'pwa/manifest.json' %}">
+    <meta name="theme-color" content="#ff5722">
 
-      <!-- Apple & iOS -->
-      <meta name="apple-mobile-web-app-capable" content="yes">  
-      <meta name="mobile-web-app-capable" content="yes">        
+    <!-- Apple & iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="mobile-web-app-capable" content="yes">        
+    <link rel="apple-touch-icon" href="{% static 'pwa/icons/icono.png' %}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-      <link rel="apple-touch-icon" href="{% static 'pwa/icons/icono.png' %}">
-      <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-
-    
+    <!-- Service Worker -->
     <script>
       if ("serviceWorker" in navigator) {
           window.addEventListener("load", () => {
@@ -27,7 +24,7 @@
           });
       }
     </script>
-    <!-- PWA -->
+    <!-- /PWA = -->
 
     <meta charset="utf-8" />
     <title>Recetas</title>
@@ -143,7 +140,6 @@
       </div>
     </footer>
 
-    <!-- Preloader -->
     <div id="preloader-active">
       <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
@@ -153,6 +149,30 @@
         </div>
       </div>
     </div>
+    <button id="btn-instalar"
+        style="display:none; position:fixed; bottom:20px; right:20px; z-index:9999;"
+        class="btn btn-primary">
+      Instalar App
+    </button>
+
+    <script>
+      let deferredPrompt;
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+
+          const btn = document.getElementById("btn-instalar");
+          btn.style.display = "block";
+
+          btn.addEventListener("click", () => {
+              btn.style.display = "none";
+              deferredPrompt.prompt();
+              deferredPrompt = null;
+          });
+      });
+    </script>
+    
 
     <!-- Vendor JS -->
     <script src="{% static  'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>

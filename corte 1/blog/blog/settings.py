@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "rz2abo7hzy.loclx.io",  
+    "2ziykd3vg5.loclx.io",  
 ]
 
 
@@ -146,6 +146,5 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://rz2abo7hzy.loclx.io",
-    "http://rz2abo7hzy.loclx.io",
+    "https://2ziykd3vg5.loclx.io"
 ]
